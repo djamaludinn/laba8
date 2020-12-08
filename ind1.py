@@ -80,9 +80,8 @@ if __name__ == '__main__':
 
             count = 0
             for markets in market:
-                if people.get('shop') == sel:
+                if markets.get('shop') == sel:
 
-                if markets.get('shop') >= period:
                     count += 1
                     print(
                         '{:>4}: {}'.format(count, markets.get('shop', ''))
