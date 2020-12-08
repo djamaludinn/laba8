@@ -56,7 +56,6 @@ if __name__ == '__main__':
                     "No",
                     "Магазин",
                     "Товар",
-
                     "Стоимость в руб."
                 )
             )
@@ -69,7 +68,6 @@ if __name__ == '__main__':
                         idx,
                         markets.get('shop', ''),
                         markets.get('product', ''),
-
                         markets.get('price', 0)
                     )
                 )
@@ -77,15 +75,13 @@ if __name__ == '__main__':
             print(line)
 
         elif command.startswith('select '):
-
             parts = command.split(' ', maxsplit=2)
-            # Получить требуемый стаж.
-            period = str(parts[1])
+            sel = (parts[1])
 
-            # Инициализировать счетчик.
             count = 0
-            # Проверить сведения магазина из списка.
             for markets in market:
+                if people.get('shop') == sel:
+
                 if markets.get('shop') >= period:
                     count += 1
                     print(
@@ -94,7 +90,7 @@ if __name__ == '__main__':
                     print('Название товара:', markets.get('product', ''))
                     print('Стоимость в руб.:', markets.get('price', ''))
 
-            # Если счетчик равен 0, то работники не найдены.
+            # Если счетчик равен 0, то продукты не найдены.
             if count == 0:
                 print("Продукт не найден.")
 
